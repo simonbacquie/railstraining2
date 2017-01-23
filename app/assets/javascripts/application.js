@@ -34,9 +34,14 @@
 //= require ember-data
 //= require active-model-adapter
 
+
 //= require_self
 //= require ./guessing
+
+//= require ember-simple-auth-0.8.0-beta.3.js
 
 // for more details see: http://emberjs.com/guides/application/
 Guessing = Ember.Application.create();
 //= require_tree .
+
+

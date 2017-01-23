@@ -1,0 +1,64 @@
+{{#if controllers.application.session.isAuthenticated}}
+  <div class="row splash-loading">
+      <div class="col-sm-12 text-center">
+        <i class="fa fa-spinner fa-pulse"></i>
+      </div>
+    </div>
+{{else}}
+<div class="row login-form">
+  <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
+
+    <div class="row">
+      <div class="col-sm-12">
+      </div>
+    </div>
+    
+    {{#if controllers.application.isLoadingMessage}}
+      <div class="row splash-loading">
+        <div class="col-sm-12 text-center">
+          <i class="fa fa-spinner fa-pulse loading-icon"></i>
+          <div class="loading-msg">{{controllers.application.isLoadingMessage}}</div>
+        </div>
+      </div>
+    {{else}}
+      
+    
+      {{#if controllers.application.isLoadingUserInfo}}
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="logging-in-msg text-center"><i class="fa fa-pulse"></i> Logging in...</div>
+          </div>
+        </div>
+      {{else}}
+        
+            {{#if errorMessage}}
+              <div class="alert alert-danger alert-dismissable" role="alert">{{errorMessage}}</div>
+            {{/if}}
+            <form {{action 'authenticate' on='submit'}}>
+              <div class="form-group clearfix">
+                {{input value=identification placeholder='Email' class='input-lg form-control col-xs-12' autofocus="autofocus"  viewName='identificationInput'}}
+              </div>
+              <div class="form-group clearfix">
+                {{input value=password placeholder='Enter Password' class='input-lg form-control col-xs-12' autocomplete='off' type='password'  viewName='passwordInput'}}
+              </div>
+              <div class="form-group clearfix">
+                {{#if isBusyAuthenticating}}
+                  <button type="submit" class='col-xs-12 btn btn-lg btn-primary btn-login' disabled="disabled">Authenticating...</button>
+                {{else}}
+                  <button type="submit" class='col-xs-12 btn btn-lg btn-primary btn-login'>Login</button>
+                {{/if}}
+              </div>
+            </form>
+
+            <div class="form-group">
+              <div clas="col-xs-12">
+              </div>
+            </div>
+            
+      {{/if}}
+
+    {{/if}}
+
+  </div><!-- end /.col-md-6 -->
+</div>
+{{/if}}
