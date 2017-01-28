@@ -37,8 +37,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 
 # Use Ember as the frontend framework
-gem 'ember-rails'
-gem 'ember-source', '~> 1.13.0'
+gem 'ember-cli-rails'
 
 # Use Bootstrap SASS for Bootstrap support
 gem 'bootstrap-sass', '~> 3.3'

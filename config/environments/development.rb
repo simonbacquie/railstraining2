@@ -47,5 +47,5 @@ Rails.application.configure do
   # code, routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.ember.variant = :development
+  # config.ember.variant = :development
 end

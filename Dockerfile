@@ -18,7 +18,16 @@ FROM ruby:2.3-slim
 MAINTAINER Simon Bacquie <simonblah@gmail.com>
 
 RUN apt-get update && apt-get install -qq -y --no-install-recommends \
+      curl git
+      # curl software-properties-common python-software-properties
+RUN curl -sL https://deb.nodesource.com/setup_7.x | bash
+# RUN add-apt-repository -y ppa:chris-lea/node.js
+RUN apt-get update && apt-get install -qq -y --no-install-recommends \
       build-essential nodejs libpq-dev
+
+RUN echo '{ "allow_root": true }' > /root/.bowerrc
+RUN npm install -g bower ember-cli
+
 # Ensure that our apt package list is updated and install a few
 # packages to ensure that we can compile assets (nodejs) and
 # communicate with PostgreSQL (libpq-dev).
@@ -79,6 +88,8 @@ COPY . .
 # We can get away with using the . for the second argument because
 # this is how the unix command cp (copy) works. It stands for the
 # current directory.
+
+# RUN (cd frontend && bower install && npm install)
 
 RUN bundle exec rake RAILS_ENV=production DATABASE_URL=postgresql://user:pass@127.0.0.1/dbname ACTION_CABLE_ALLOWED_REQUEST_ORIGINS=foo,bar SECRET_TOKEN=dummytoken assets:precompile
 # Provide a dummy DATABASE_URL and more to Rails so it can pre-compile

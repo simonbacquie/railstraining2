@@ -1,5 +1,5 @@
 // Fetched from channel: release, with url http://builds.emberjs.com/release/ember-template-compiler.js
-// Fetched on: 2017-01-20T17:14:27Z
+// Fetched on: 2017-01-23T16:31:55Z
 ;(function() {
 /*!
  * @overview  Ember - JavaScript Application Framework

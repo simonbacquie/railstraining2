@@ -1,0 +1,7 @@
+{
+  "name": "testtest2",
+  "dependencies": {
+    "ember": "~1.13.0",
+    "ember-cli-shims": "0.1.3"
+  }
+}
