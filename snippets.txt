@@ -1,0 +1,23 @@
+docker-compose up
+
+docker exec -it railstraining2_web_1 bash
+
+bundle exec rake db:create
+
+pgcli $DATABASE_URL
+
+bundle exec rake db:migrate
+
+bundle install
+
+DESCRIBE users;
+SELECT * FROM schema_migrations;
+
+irb
+
+bundle exec rails console
+bundle exec rails c
+
+require 'pry'; require 'pry-remote'; binding.remote_pry
+
+bundle exec rspec

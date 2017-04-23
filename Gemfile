@@ -27,31 +27,24 @@ gem 'sidekiq', '~> 4.2'
 # Use Kaminari for pagination
 # gem 'kaminari', '~> 0.16'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-
-# Use Uglifier as the compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use jQuery as the JavaScript library
-gem 'jquery-rails'
-
-# Use Ember as the frontend framework
-gem 'ember-cli-rails'
-
-# Use Bootstrap SASS for Bootstrap support
-gem 'bootstrap-sass', '~> 3.3'
-
-# Use Font Awesome Rails for Font Awesome icons
-gem 'font-awesome-rails', '~> 4.7'
-
 # Auth
 gem 'devise'
 gem 'jwt'
 
+# Frontend -- not used right now, but maybe if you want to add one down the road
+gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 3.3'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'font-awesome-rails'
+
+gem 'rspec'
+
 group :development, :test do
   # Call 'byebug' anywhere in your code to drop into a debugger console
   gem 'byebug', platform: :mri
+  gem 'pry'
+  gem 'pry-remote'
 end
 
 group :development do

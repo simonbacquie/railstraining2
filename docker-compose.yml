@@ -4,7 +4,7 @@ services:
   postgres:
     image: 'postgres:9.5'
     environment:
-      POSTGRES_USER: 'guessing'
+      POSTGRES_USER: 'rails_training2'
       POSTGRES_PASSWORD: 'yourpassword'
     ports:
       - '54322:54322'
@@ -27,7 +27,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - '.:/guessing'
+      - '.:/rails_training2'
     env_file:
       - '.env'
 
@@ -38,7 +38,7 @@ services:
     build: .
     command: sidekiq -C config/sidekiq.yml.erb
     volumes:
-      - '.:/guessing'
+      - '.:/rails_training2'
     env_file:
       - '.env'
 
@@ -50,7 +50,7 @@ services:
     ports:
       - '28080:28080'
     volumes:
-      - '.:/guessing'
+      - '.:/rails_training2'
     env_file:
       - '.env'
 
