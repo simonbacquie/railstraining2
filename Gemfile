@@ -27,9 +27,13 @@ gem 'sidekiq', '~> 4.2'
 # Use Kaminari for pagination
 # gem 'kaminari', '~> 0.16'
 
+gem 'coderay', '~> 1.1.0'
+
 # Auth
-gem 'devise'
 gem 'jwt'
+gem 'devise'
+# gem 'devise_token_auth'
+# gem 'omniauth'
 
 # Frontend -- not used right now, but maybe if you want to add one down the road
 gem 'jquery-rails'
@@ -43,7 +47,7 @@ gem 'rspec'
 group :development, :test do
   # Call 'byebug' anywhere in your code to drop into a debugger console
   gem 'byebug', platform: :mri
-  gem 'pry'
+  gem 'pry', '~> 0.10.4'
   gem 'pry-remote'
 end
 

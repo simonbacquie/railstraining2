@@ -25,13 +25,16 @@ RUN curl -sL https://deb.nodesource.com/setup_7.x | bash
 RUN apt-get update && apt-get install -qq -y --no-install-recommends \
       build-essential nodejs libpq-dev postgresql-client-9.4
 RUN pip install pgcli
+# make sure we have the latest Bundler to avoid coderay issues
+RUN gem install bundler
+RUN gem install teamocil
 
 # Ensure that our apt package list is updated and install a few
 # packages to ensure that we can compile assets (nodejs) and
 # communicate with PostgreSQL (libpq-dev).
 
-ENV INSTALL_PATH /rails_training2
-# The name of the application is rails_training2 and while there
+ENV INSTALL_PATH /railstraining2
+# The name of the application is railstraining2 and while there
 # is no standard on where your project should live inside of the Docker
 # image, I like to put it in the root of the image and name it
 # after the project.
@@ -48,8 +51,8 @@ RUN mkdir -p $INSTALL_PATH
 
 WORKDIR $INSTALL_PATH
 # We're going to be executing a number of commands below, and
-# having to CD into the /rails_training2 folder every time would be
-# lame, so instead we can set the WORKDIR to be /rails_training2.
+# having to CD into the /railstraining2 folder every time would be
+# lame, so instead we can set the WORKDIR to be /railstraining2.
 #
 # By doing this, Docker will be smart enough to execute all
 # future commands from within this directory.
@@ -57,9 +60,9 @@ WORKDIR $INSTALL_PATH
 COPY Gemfile Gemfile.lock ./
 # This is going to copy in the Gemfile and Gemfile.lock from our
 # work station at a path relative to the Dockerfile to the
-# rails_training2/ path inside of the Docker image.
+# railstraining2/ path inside of the Docker image.
 #
-# It copies it to /rails_training2 because of the WORKDIR being set.
+# It copies it to /railstraining2 because of the WORKDIR being set.
 #
 # We copy in our Gemfile before the main app because Docker is
 # smart enough to cache "layers" when you build a Docker image.
@@ -81,7 +84,7 @@ RUN bundle install --binstubs
 COPY . .
 # This might look a bit alien but it's copying in everything from
 # the current directory relative to the Dockerfile, over to the
-# /rails_training2 folder inside of the Docker image.
+# /railstraining2 folder inside of the Docker image.
 #
 # We can get away with using the . for the second argument because
 # this is how the unix command cp (copy) works. It stands for the

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  # protect_from_forgery with: :exception
+
+  # so that we can get the @current_user instance variable from anywhere
   attr_reader :current_user
 
   protected
@@ -14,18 +15,19 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  def http_token
-      @http_token ||= if request.headers['Authorization'].present?
+  def passed_in_token
+      @passed_in_token ||= if request.headers['Authorization'].present?
+        # so that it still works if they put "Bearer " before the token
         request.headers['Authorization'].split(' ').last
       end
   end
 
-  def auth_token
-    @auth_token ||= JsonWebToken.decode(http_token)
+  def decoded_token
+    @decoded_token ||= JsonWebToken.decode(passed_in_token)
   end
 
   def user_id_in_token?
-    http_token && auth_token && auth_token[:user_id].to_i
+    passed_in_token && decoded_token && decoded_token[:user_id].present?
   end
 
 end
