@@ -3,7 +3,7 @@ class CreateComments < ActiveRecord::Migration[5.0]
     create_table :comments do |t|
       t.text    :body
       t.integer :post_id
-      t.boolean :visible
+      t.boolean :visible, default: true
       t.integer :user_id
 
       t.timestamps

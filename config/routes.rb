@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # logout
 
   namespace :api, :defaults => {:format => :json} do
-    get "/images", to: "images#index"
+    get  "/images", to: "images#index"
+    get  "/posts",  to: "posts#index"
+    post "/posts",  to: "posts#create"
   end
 
 end

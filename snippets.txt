@@ -23,6 +23,7 @@ require 'pry'; require 'pry-remote'; binding.remote_pry
 bundle exec rspec
 
 docker restart railstraining2_web_1
+docker restart railstraining2_sidekiq_1
 
 ps aux | grep puma | grep tcp
 bundle exec pumactl -p 7 restart
@@ -53,3 +54,10 @@ rails generate job show_all_posts
 bundle exec rake db:seed
 
 HideAllPostsJob.perform_now
+
+
+### run from Rails console ###
+
+Post.all.each{|x| x.visible = true; x.save }
+Comment.all.each{|x| x.visible = true; x.save }
+User.first.posts
