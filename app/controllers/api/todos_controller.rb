@@ -21,7 +21,7 @@ class Api::TodosController < ::ApiController
     # make a new Todo object and persist it to the DB
 
     if params[:name].present?
-      new_todo         = Post.new
+      new_todo         = Todo.new
       new_todo.name    = params[:name]
       new_todo.user_id = current_user.id
       new_todo.save
@@ -38,14 +38,15 @@ class Api::TodosController < ::ApiController
     todo.done = (params[:name] == 'true') if params[:done].present?
     todo.save
 
-    render status: 204, json: todo
+    # when it's a 204 you don't output any response body
+    render status: 204, json: nil
   end
 
   def destroy
     todo = Todo.find(params[:id])
     todo.destroy
 
-    render status: 204, json: {message: "deleted"}
+    render status: 204, json: nil
   end
 
 end

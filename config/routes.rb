@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     post "/todos",  to: "todos#create"
 
     get  "/todos/done",  to: "todos#index_done"
-    post "/todos/open",  to: "todos#index_open"
+    get  "/todos/open",  to: "todos#index_open"
 
     put    "/todos/:id",  to: "todos#update"
     delete "/todos/:id",  to: "todos#destroy"
