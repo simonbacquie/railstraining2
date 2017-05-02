@@ -1,15 +1,20 @@
 docker-compose up
 
+# ssh into the web container
 docker exec -it railstraining2_web_1 bash
 
+# create the database
 bundle exec rake db:create
 
+# connect to the DB from the command line
 pgcli $DATABASE_URL
 
 bundle exec rake db:migrate
 
+# after adding a new gem, or first setting up a new project (you'd do this inside the container)
 bundle install
 
+# run these inside pgcli
 DESCRIBE users;
 SELECT * FROM schema_migrations;
 
@@ -18,20 +23,20 @@ irb
 bundle exec rails console
 bundle exec rails c
 
-require 'pry'; require 'pry-remote'; binding.remote_pry
-
-bundle exec rspec
-
+# work with containers... SSH in, restart them, etc.
+docker exec -it railstraining2_web_1 bash
 docker restart railstraining2_web_1
 docker restart railstraining2_sidekiq_1
 
 ps aux | grep puma | grep tcp
 bundle exec pumactl -p 7 restart
 
+# create a new user
 x = User.last
 x = User.where(email: 'myemail@test.com').first
 x.confirm
 
+# change an existing user's password
 a = User.new
 a.email = "test.user@test.com"
 a.password = "pa11word"
@@ -39,7 +44,7 @@ a.password_confirmation = "pa11word"
 a.save
 
 
-
+# generating models, along with migrations to create its table
 rails generate model Post
 rails generate model Comment
 
@@ -47,17 +52,18 @@ rails generate model Comment
 rails generate migration CreatePosts
 rails generate migration CreateComments
 
-touch app/controllers/api/posts_controller.rb
+# the "job" part gets appended automatically... if you put DeleteAllTodosJob, the class generated would be DeleteAllTodosJobJob!
+rails generate job DeleteAllTodos
 
-rails generate job show_all_posts
-
+# populate the DB with seed data
 bundle exec rake db:seed
 
-HideAllPostsJob.perform_now
+# run a job
+SetAllTodosOpenJob.perform_now
 
+# handy things to run from a Rails console
+Todo.all.each{|x| x.done = true; x.save }
+User.first.todos
 
-### run from Rails console ###
-
-Post.all.each{|x| x.visible = true; x.save }
-Comment.all.each{|x| x.visible = true; x.save }
-User.first.posts
+# we probably won't get to cover this
+require 'pry'; require 'pry-remote'; binding.remote_pry

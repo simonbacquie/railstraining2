@@ -1,0 +1,202 @@
+{
+	"id": "ea58c3f5-8d57-30fe-f71c-2955d7ea61f5",
+	"name": "RailsTraining2",
+	"description": "",
+	"order": [
+		"bf63f41f-7327-ca37-e7a7-ccc2a1114d72",
+		"ab4cca2b-790f-7857-cc99-b0b908588104",
+		"068d59c7-0499-b812-5fb3-9d7e28217cd3",
+		"a69f12fd-cf82-0a20-4066-9ff36f548fed",
+		"559db69c-4440-3618-5370-8d2d7dd4a9e7",
+		"8b3ffa22-28f3-24eb-3281-7e2e536ce388",
+		"a9816741-8b52-292a-d604-1f392486c148"
+	],
+	"folders": [],
+	"timestamp": 1492975013964,
+	"owner": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "068d59c7-0499-b812-5fb3-9d7e28217cd3",
+			"headers": "authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.KeEONQqPCuAI7PUVRjk29T2r5k-H5ryBJAS7GHK2V2o\n",
+			"url": "http://localhost:3000/api/todos",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "body",
+					"value": "Contents of the new post go here",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1493519993464,
+			"name": "List Todos",
+			"description": "",
+			"collectionId": "ea58c3f5-8d57-30fe-f71c-2955d7ea61f5",
+			"responses": []
+		},
+		{
+			"id": "559db69c-4440-3618-5370-8d2d7dd4a9e7",
+			"headers": "authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.KeEONQqPCuAI7PUVRjk29T2r5k-H5ryBJAS7GHK2V2o\n",
+			"url": "http://localhost:3000/api/todos/open",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "body",
+					"value": "Contents of the new post go here",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1493522065060,
+			"name": "List Open Todos",
+			"description": "",
+			"collectionId": "ea58c3f5-8d57-30fe-f71c-2955d7ea61f5",
+			"responses": []
+		},
+		{
+			"id": "8b3ffa22-28f3-24eb-3281-7e2e536ce388",
+			"headers": "authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.KeEONQqPCuAI7PUVRjk29T2r5k-H5ryBJAS7GHK2V2o\n",
+			"url": "http://localhost:3000/api/todos/done",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "body",
+					"value": "Contents of the new post go here",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1493522086316,
+			"name": "List Done Todos",
+			"description": "",
+			"collectionId": "ea58c3f5-8d57-30fe-f71c-2955d7ea61f5",
+			"responses": []
+		},
+		{
+			"id": "a69f12fd-cf82-0a20-4066-9ff36f548fed",
+			"headers": "authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.KeEONQqPCuAI7PUVRjk29T2r5k-H5ryBJAS7GHK2V2o\n",
+			"url": "http://localhost:3000/api/todos/1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "Make a Rails training 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1493521994750,
+			"name": "Update Todo",
+			"description": "",
+			"collectionId": "ea58c3f5-8d57-30fe-f71c-2955d7ea61f5",
+			"responses": []
+		},
+		{
+			"id": "a9816741-8b52-292a-d604-1f392486c148",
+			"headers": "authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.KeEONQqPCuAI7PUVRjk29T2r5k-H5ryBJAS7GHK2V2o\n",
+			"url": "http://localhost:3000/api/todos/1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [
+				{
+					"key": "name",
+					"value": "Make a Rails training 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1493522146274,
+			"name": "Delete Todo",
+			"description": "",
+			"collectionId": "ea58c3f5-8d57-30fe-f71c-2955d7ea61f5",
+			"responses": []
+		},
+		{
+			"id": "ab4cca2b-790f-7857-cc99-b0b908588104",
+			"headers": "authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.KeEONQqPCuAI7PUVRjk29T2r5k-H5ryBJAS7GHK2V2o\n",
+			"url": "http://localhost:3000/api/todos",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Make a Rails training",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1493521775852,
+			"name": "New Todo",
+			"description": "",
+			"collectionId": "ea58c3f5-8d57-30fe-f71c-2955d7ea61f5",
+			"responses": []
+		},
+		{
+			"id": "bf63f41f-7327-ca37-e7a7-ccc2a1114d72",
+			"headers": "",
+			"url": "http://localhost:3000/login",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "simon.bacquie@creativedrive.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "pa11word",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1493508540417,
+			"name": "Login",
+			"description": "",
+			"collectionId": "ea58c3f5-8d57-30fe-f71c-2955d7ea61f5",
+			"responses": []
+		}
+	]
+}
