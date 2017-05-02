@@ -6,7 +6,7 @@ Go into the application directory and type:
 
 (no, not really)
 
-Check out `snippets.txt` in the root directory, that's pretty much all the commands we'll be running.
+Check out `snippets.txt` in the root directory, that's pretty much all the commands we could be running. You can use it as a cheat sheet. I ran many of them for you already.
 
 To get started ahead of time:
 
