@@ -27,7 +27,6 @@ RUN apt-get update && apt-get install -qq -y --no-install-recommends \
 RUN pip install pgcli
 # make sure we have the latest Bundler to avoid coderay issues
 RUN gem install bundler
-RUN gem install teamocil
 
 # Ensure that our apt package list is updated and install a few
 # packages to ensure that we can compile assets (nodejs) and
