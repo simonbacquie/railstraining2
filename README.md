@@ -18,6 +18,8 @@ To get started ahead of time:
 
 * import RailsTraining2 Postman collection from this repo into Postman
 
+To make sure the app is running, try `localhost:3000`. If it can't find the server, use `docker-machine ip` to figure out the IP, then use that instead of `localhost`. If you see a red ActiveRecord error saying database not found, you're good to go--we'll sort out the rest during the training.
+
 In this training, we'll go over a Dockerized Rails setup provided by the ORATS project. We'll be working on a simple Rails API with JWT authentication, fill in some functionality, run a job, and write a new job. I'll also get to show you `pgcli`, which has been extremely useful for me lately.
 
 You can think of this as the API backend that you could use for TodoMVC.
