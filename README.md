@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Go into the application directory and type:
 
-Things you may want to cover:
+`up app`
 
-* Ruby version
+(no, not really)
 
-* System dependencies
+Check out `snippets.txt` in the root directory, that's pretty much all the commands we'll be running.
 
-* Configuration
+To get started ahead of time:
 
-* Database creation
+* `docker-compose build`
 
-* Database initialization
+* `docker-compose up`
 
-* How to run the test suite
+* install Postman if you don't have it already
 
-* Services (job queues, cache servers, search engines, etc.)
+* import RailsTraining2 Postman collection from this repo into Postman
 
-* Deployment instructions
+In this training, we'll go over a Dockerized Rails setup provided by the ORATS project. We'll be working on a simple Rails API with JWT authentication, fill in some functionality, run a job, and write a new job. I'll also get to show you `pgcli`, which has been extremely useful for me lately.
 
-* ...
+You can think of this as the API backend that you could use for TodoMVC.
